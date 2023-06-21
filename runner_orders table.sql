@@ -1,12 +1,12 @@
 use pizza_runner
 DROP TABLE IF EXISTS runner_orders;
 
-CREATE TABLE runner_orders (  "order_id" INTEGER,
-							  "runner_id" INTEGER,
-							  "pickup_time" VARCHAR(20),
-							  "distance" VARCHAR(20),
-							  "duration" VARCHAR(20),
-							  "cancellation" VARCHAR(30));
+CREATE TABLE runner_orders (    "order_id" INTEGER,
+			        "runner_id" INTEGER,
+				"pickup_time" VARCHAR(20),
+				"distance" VARCHAR(20),
+				 "duration" VARCHAR(20),
+				 "cancellation" VARCHAR(30));
 
 INSERT INTO runner_orders  ("order_id", "runner_id", "pickup_time", "distance", "duration", "cancellation")
 VALUES ('1', '1', '2020-01-01 18:15:34', '20km', '32 minutes', ''),
@@ -32,12 +32,12 @@ case when cancellation = 'null' or cancellation = '' or cancellation is null the
 from runner_orders
 
 DROP TABLE IF EXISTS runner_orders_dummy
-CREATE TABLE runner_orders_dummy (   "order_id" INTEGER,
-									  "runner_id" INTEGER,
-									  "pickup_time" datetime,
-									  "distance" VARCHAR(7),
-									  "duration" VARCHAR(10),
-									  "cancellation" VARCHAR(30));
+CREATE TABLE runner_orders_dummy ( "order_id" INTEGER,
+				  "runner_id" INTEGER,
+				  "pickup_time" datetime,
+				  "distance" VARCHAR(7),
+				  "duration" VARCHAR(10),
+				  "cancellation" VARCHAR(30));
 
 INSERT INTO runner_orders_dummy  ("order_id", "runner_id", "pickup_time", "distance", "duration", "cancellation")
 select order_id, runner_id, 
